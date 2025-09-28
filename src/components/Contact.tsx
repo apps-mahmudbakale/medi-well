@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Calendar, Send, MessageSquare } from 'lucide-react';
 
 const Contact = () => {
@@ -7,7 +7,7 @@ const Contact = () => {
     email: '',
     phone: '',
     message: '',
-    appointmentType: 'consultation'
+    appointmentType: 'mri'
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -20,7 +20,7 @@ const Contact = () => {
       email: '',
       phone: '',
       message: '',
-      appointmentType: 'consultation'
+      appointmentType: 'mri'
     });
   };
 
@@ -40,8 +40,8 @@ const Contact = () => {
             Contact Us
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ready to schedule an appointment or have questions about our services? 
-            We're here to help you every step of the way.
+            Ready to schedule a diagnostic test or have questions about our services? 
+            Our team is here to assist you with all your diagnostic needs.
           </p>
         </div>
 
@@ -57,8 +57,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Phone Numbers</h4>
-                    <p className="text-gray-600">Main: (555) 123-DIAL</p>
-                    <p className="text-gray-600">Emergency: (555) 911-DIAL</p>
+                    <p className="text-gray-600">Main: (555) 123-SCAN</p>
+                    <p className="text-gray-600">Appointments: (555) 555-TEST</p>
                   </div>
                 </div>
 
@@ -68,8 +68,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Email</h4>
-                    <p className="text-gray-600">info@clearflowdialysis.com</p>
-                    <p className="text-gray-600">appointments@clearflowdialysis.com</p>
+                    <p className="text-gray-600">info@mediwelldiagnostics.com</p>
+                    <p className="text-gray-600">appointments@mediwelldiagnostics.com</p>
                   </div>
                 </div>
 
@@ -80,9 +80,9 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Address</h4>
                     <p className="text-gray-600">
-                      123 Medical Center Drive<br />
-                      Downtown Medical District<br />
-                      City, State 12345
+                      456 Diagnostic Way<br />
+                      Healthcare Plaza, Suite 300<br />
+                      Medical District, NY 10001
                     </p>
                   </div>
                 </div>
@@ -94,10 +94,10 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Hours</h4>
                     <div className="text-gray-600 space-y-1">
-                      <p>Monday - Friday: 6:00 AM - 8:00 PM</p>
-                      <p>Saturday: 6:00 AM - 4:00 PM</p>
-                      <p>Sunday: Closed</p>
-                      <p className="text-red-600 font-semibold">Emergency: 24/7</p>
+                      <p>Monday - Friday: 7:00 AM - 9:00 PM</p>
+                      <p>Saturday: 8:00 AM - 5:00 PM</p>
+                      <p>Sunday: 9:00 AM - 3:00 PM</p>
+                      <p className="text-red-600 font-semibold">24/7 Emergency Imaging Available</p>
                     </div>
                   </div>
                 </div>
@@ -186,10 +186,12 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                 >
-                  <option value="consultation">Initial Consultation</option>
-                  <option value="followup">Follow-up Appointment</option>
-                  <option value="emergency">Emergency Care</option>
-                  <option value="information">General Information</option>
+                  <option value="mri">MRI Scan</option>
+                  <option value="ct">CT Scan</option>
+                  <option value="ultrasound">Ultrasound</option>
+                  <option value="xray">X-Ray</option>
+                  <option value="lab">Laboratory Tests</option>
+                  <option value="consult">Consultation</option>
                 </select>
               </div>
 
@@ -222,14 +224,14 @@ const Contact = () => {
         {/* Appointment CTA */}
         <div id="appointment" className="mt-20 bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 lg:p-12 text-white text-center">
           <Calendar className="w-16 h-16 mx-auto mb-6" />
-          <h3 className="text-3xl font-bold mb-4">Ready to Schedule Your Appointment?</h3>
+          <h3 className="text-3xl font-bold mb-4">Schedule Your Diagnostic Test</h3>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Take the first step towards better kidney health. Our team is ready to provide 
-            you with personalized, compassionate care.
+            Get accurate results with our state-of-the-art diagnostic imaging and laboratory services. 
+            Our team is ready to provide you with fast, reliable, and compassionate care.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
-              Call (555) 123-DIAL
+              Call (555) 123-SCAN
             </button>
             <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
               Request Online

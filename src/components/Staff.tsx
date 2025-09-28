@@ -1,55 +1,63 @@
-import React from 'react';
-import { Award, BookOpen, Clock, Users } from 'lucide-react';
+import { BookOpen, Clock, Brain, Heart, Bone } from 'lucide-react';
 
 const Staff = () => {
   const doctors = [
     {
-      name: "Dr. Sarah Martinez, MD",
-      title: "Medical Director & Nephrologist",
-      image: "https://images.pexels.com/photos/5452268/pexels-photo-5452268.jpeg?auto=compress&cs=tinysrgb&w=400",
-      specialties: ["Chronic Kidney Disease", "Hypertension", "Transplant Medicine"],
+      name: "Dr. James Wilson, MD",
+      title: "Medical Director & Radiologist",
+      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+      specialties: ["Neuroradiology", "MRI Interpretation", "Diagnostic Imaging"],
       education: "Harvard Medical School",
-      experience: "15+ years",
-      bio: "Dr. Martinez leads our medical team with extensive experience in nephrology and a commitment to patient-centered care."
+      experience: "18+ years",
+      bio: "Dr. Wilson leads our radiology team with extensive experience in advanced diagnostic imaging and a commitment to accurate, timely diagnoses.",
+      icon: Brain
     },
     {
-      name: "Dr. Michael Chen, MD",
-      title: "Nephrologist",
-      image: "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=400",
-      specialties: ["Dialysis Management", "Kidney Stones", "Electrolyte Disorders"],
+      name: "Dr. Lisa Chen, MD",
+      title: "Cardiologist",
+      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+      specialties: ["Cardiac Imaging", "Echocardiography", "Stress Testing"],
       education: "Johns Hopkins University",
-      experience: "12+ years",
-      bio: "Dr. Chen specializes in comprehensive dialysis care and innovative treatment approaches for kidney disease."
+      experience: "15+ years",
+      bio: "Dr. Chen specializes in comprehensive cardiac diagnostics and innovative imaging techniques for heart health assessment.",
+      icon: Heart
     },
     {
-      name: "Dr. Emily Rodriguez, MD",
-      title: "Nephrologist",
-      image: "https://images.pexels.com/photos/5452297/pexels-photo-5452297.jpeg?auto=compress&cs=tinysrgb&w=400",
-      specialties: ["Pediatric Nephrology", "Home Dialysis", "Patient Education"],
-      education: "Stanford University",
-      experience: "10+ years",
-      bio: "Dr. Rodriguez focuses on pediatric and young adult kidney care, with expertise in home dialysis programs."
+      name: "Dr. Robert Taylor, MD",
+      title: "Radiologist",
+      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+      specialties: ["Musculoskeletal Radiology", "CT Scans", "Interventional Radiology"],
+      education: "Mayo Clinic College of Medicine",
+      experience: "12+ years",
+      bio: "Dr. Taylor brings expertise in musculoskeletal imaging and minimally invasive diagnostic procedures.",
+      icon: Bone
     }
   ];
 
-  const nursing = [
+  const technicians = [
     {
-      name: "Jennifer Thompson, RN",
-      title: "Charge Nurse",
-      certifications: ["CNN", "CDN"],
+      name: "Sarah Johnson, RT(R)",
+      title: "Lead Radiologic Technologist",
+      certifications: ["ARRT", "CT Certification"],
+      experience: "10+ years"
+    },
+    {
+      name: "Michael Chen, RT(MR)",
+      title: "MRI Technologist",
+      certifications: ["ARRT(MR)", "ACLS"],
       experience: "8+ years"
     },
     {
-      name: "Robert Kim, RN",
-      title: "Clinical Nurse",
-      certifications: ["CNN", "CCHT"],
-      experience: "6+ years"
+      name: "Emily Rodriguez, RDMS",
+      title: "Ultrasound Specialist",
+      certifications: ["ARDMS", "RVT"],
+      experience: "7+ years"
     },
     {
-      name: "Maria Santos, RN",
-      title: "Patient Care Coordinator",
-      certifications: ["CNN", "CPN"],
-      experience: "10+ years"
+      name: "David Kim, CNMT",
+      title: "Nuclear Medicine Technologist",
+      certifications: ["NMTCB", "PET/CT"],
+      experience: "9+ years"
     }
   ];
 
@@ -59,18 +67,18 @@ const Staff = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Meet Our Expert Team
+            Our Expert Medical Team
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our board-certified nephrologists and experienced nursing staff are dedicated to 
-            providing exceptional care with compassion and expertise.
+            Our board-certified radiologists and experienced technologists are dedicated to 
+            providing accurate diagnoses with the latest imaging technology and compassionate care.
           </p>
         </div>
 
         {/* Doctors */}
         <div className="mb-20">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Our Physicians
+            Our Radiologists & Specialists
           </h3>
           <div className="grid lg:grid-cols-3 gap-8">
             {doctors.map((doctor, index) => (
@@ -90,7 +98,7 @@ const Staff = () => {
                   
                   <div className="space-y-4 mb-6">
                     <div className="flex items-start gap-3">
-                      <Award className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                      <doctor.icon className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
                       <div>
                         <p className="font-semibold text-gray-900">Specialties:</p>
                         <p className="text-gray-600 text-sm">{doctor.specialties.join(", ")}</p>
@@ -114,27 +122,28 @@ const Staff = () => {
             ))}
           </div>
         </div>
-
-        {/* Nursing Team */}
-        <div className="bg-white rounded-2xl p-8 lg:p-12">
+        {/* Technicians */}
+        <div className="mt-20">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Our Nursing Team
+            Our Technologists
           </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {nursing.map((nurse, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors">
-                  <Users className="w-10 h-10 text-blue-600" />
-                </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-2">{nurse.name}</h4>
-                <p className="text-blue-600 font-semibold mb-3">{nurse.title}</p>
-                <div className="space-y-2">
-                  <p className="text-sm text-gray-600">
-                    <span className="font-semibold">Certifications:</span> {nurse.certifications.join(", ")}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    <span className="font-semibold">Experience:</span> {nurse.experience}
-                  </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {technicians.map((tech, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div className="text-center">
+                  <h4 className="text-xl font-bold text-gray-900">{tech.name}</h4>
+                  <p className="text-blue-600 font-semibold mb-4">{tech.title}</p>
+                  
+                  <div className="space-y-3 text-sm text-gray-600">
+                    <div className="flex items-center justify-center gap-2">
+                      <BookOpen className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                      <span className="text-left">Certifications: {tech.certifications.join(", ")}</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2">
+                      <Clock className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                      <span>Experience: {tech.experience}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -148,8 +157,8 @@ const Staff = () => {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <p className="font-semibold text-gray-900">Medicare Certified</p>
-              <p className="text-sm text-gray-600">CMS Approved</p>
+              <p className="font-semibold text-gray-900">ACR Accredited</p>
+              <p className="text-sm text-gray-600">Imaging Excellence</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <p className="font-semibold text-gray-900">Joint Commission</p>
